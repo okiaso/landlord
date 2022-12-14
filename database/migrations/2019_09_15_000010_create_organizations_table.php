@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('organizations', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+
+            // your custom columns may go here
+            $table->string('name');
+
             $table->timestamps();
+            $table->json('data')->nullable();
         });
     }
 
