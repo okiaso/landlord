@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Models\Organization;
+use Database\Seeders\Tenant\DatabaseSeeder;
 use Stancl\Tenancy\Database\Models\Domain;
 
 return [
@@ -136,7 +137,7 @@ return [
          * disable asset() helper tenancy and explicitly use tenant_asset() calls in places
          * where you want to use tenant-specific assets (product images, avatars, etc).
          */
-        'asset_helper_tenancy' => true,
+        'asset_helper_tenancy' => false,
     ],
 
     /**
@@ -194,7 +195,7 @@ return [
      * Parameters used by the tenants:seed command.
      */
     'seeder_parameters' => [
-        '--class' => 'DatabaseSeeder', // root seeder class
+        '--class' => DatabaseSeeder::class, // root seeder class
         // '--force' => true,
     ],
 ];

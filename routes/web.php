@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('system.welcome');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('system.dashboard');
     })->name('dashboard');
 
     Route::resource('organization', OrganizationController::class)->names('organization');
