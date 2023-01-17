@@ -1,2 +1,2 @@
-# laravel-landlord
-Laravel Multi-tenancy demo
+# Landlord
+Laravel Multi-tenancy (Landlord & Tenant) starter app
